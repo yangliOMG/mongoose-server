@@ -103,7 +103,7 @@ Router.get('/get.do',function(req,res){
                 if(err){
                     return res.json({code:1,msg:'find openidArr失败'})
                 }
-                doc.groupArr = arr
+                doc.groupArr = openidArr.map(v=>(arr.find(i=>i.openid==v)))
                 if( doc.end_time < new Date().getTime()){
                     Match.update({_id:doc._id},{'$set':{status:1}},function(err,d){
                         if(err){
@@ -130,7 +130,7 @@ Router.get('/getbyid.do',function(req,res){
             if(err){
                 return res.json({code:1,msg:'find openidArr失败'})
             }
-            doc.groupArr = arr
+            doc.groupArr = openidArr.map(v=>(arr.find(i=>i.openid==v)))
             return res.json({code:0,data:doc})
         })
     })
