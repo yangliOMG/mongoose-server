@@ -7,6 +7,9 @@
 D:
 cd D:\Program Files\MongoDB\Server\3.4\bin
 mongod --dbpath e:\data\db
+---------linux
+cd /usr/local/mongodb/mongodb/
+bin/mongo
 ```
 * mongo.exe //运行 mongo.exe   //可以用来查询数据库或者运行robo 3T 可视化操作
 ```
